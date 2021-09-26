@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "google-keep-clone"
+    }
+  },
+  "defaultProject": "google-keep-clone",
+  "cli": {
+    "analytics": "30dbe09f-0f6e-4c07-a877-aa0ab81174a5"
+  }
 }
