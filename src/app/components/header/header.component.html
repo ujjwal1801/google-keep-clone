@@ -1,1 +1,14 @@
-<p>header works!</p>
+<header>
+    <div class="header-menu d-flex">
+        <span (click)="toggleSideNav()" class="menu-icon material-icons">menu</span>
+        <div class="search-box">
+            <div class="d-flex flex-center h-100">
+                <span class="material-icons"  style="font-size: 32px;">
+                    search
+                </span>
+                <input type="text" placeholder="Search" class="search-input">
+            </div>
+        </div>
+        <span class="menu-icon material-icons">settings</span>
+    </div>
+</header>

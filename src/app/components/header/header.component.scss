@@ -1,0 +1,19 @@
+.menu-icon {
+    font-size: 2em;
+    padding: 15px;
+    cursor: pointer;
+}
+.header-menu{
+    justify-content: space-between;
+    width: 100vw;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.search-box{
+    flex-grow: 1;
+    .search-input{
+        border: none;
+        padding: 6px 20px;
+        font-size: 22px;
+    }
+}

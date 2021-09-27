@@ -1,0 +1,9 @@
+<section class="d-flex flex-center w-100 p-10">
+    <input type="text" placeholder="Take a note..." class="note-box" [(ngModel)]="newNoteText" (blur)="saveNote()">
+</section>
+<div class="notes-container">
+    <ng-container *ngFor="let note of notes">
+    <!-- <ng-container *ngFor="let note of notes | async"> -->
+        <app-note [noteData]="note"></app-note>
+    </ng-container>
+</div>

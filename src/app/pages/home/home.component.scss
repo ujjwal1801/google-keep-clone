@@ -1,0 +1,15 @@
+.note-box{
+    padding: 6px 20px;
+    font-size: 22px;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+}
+.note-box:focus{
+    outline: none;
+}
+
+.notes-container{
+    
+column-count: 4;
+  column-gap: 10px;
+}

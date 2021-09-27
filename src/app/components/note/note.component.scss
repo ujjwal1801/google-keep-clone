@@ -1,0 +1,20 @@
+.note-layout{
+    max-height: 344px;
+    width: 238px;
+    padding: 12px 16px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(224, 224, 224);;
+    // box-sizing: border-box;
+    overflow: hidden;
+    // position: relative;
+    border-radius: 8px;
+    transition-duration: 0.218s;
+    transition-property: background, border, opacity, box-shadow, transform;
+    transition-timing-function: ease-in;
+
+    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin-bottom: 10px;
+    break-inside: avoid;
+}
