@@ -1,9 +1,21 @@
-<section class="d-flex flex-center w-100 p-10">
-    <input type="text" placeholder="Take a note..." class="note-box" [(ngModel)]="newNoteText" (blur)="saveNote()">
-</section>
-<div class="notes-container">
-    <ng-container *ngFor="let note of notes">
-    <!-- <ng-container *ngFor="let note of notes | async"> -->
-        <app-note [noteData]="note"></app-note>
-    </ng-container>
-</div>
+<app-add-note></app-add-note>
+
+<ng-container *ngIf="(pinnedNotes | async)?.length > 0">
+    <h5><i>Pinned Notes</i></h5>
+    <div class="notes-container">
+        <ng-container>
+            <div *ngFor="let note of pinnedNotes | async">
+                <app-note [noteData]="note"></app-note>
+            </div>
+        </ng-container>
+    </div>
+</ng-container>
+<ng-container *ngIf="(notes | async)?.length > 0">
+    <h5><i>Others</i></h5>
+    <div class="notes-container">
+        <ng-container *ngFor="let note of notes | async">
+            <app-note [noteData]="note"></app-note>
+        </ng-container>
+    </div>
+</ng-container>
+

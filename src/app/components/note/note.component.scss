@@ -1,20 +1,64 @@
+@mixin icons-on-hover {
+    position: relative;
+    visibility: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transition-duration: 0.4s;
+    transition-property: visibility, opacity;
+    transition-timing-function: ease-in-out;
+}
+
+@mixin icon-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+
 .note-layout{
-    max-height: 344px;
     width: 238px;
     padding: 12px 16px;
-    background-color: rgb(255, 255, 255);
     border: 1px solid rgb(224, 224, 224);;
-    // box-sizing: border-box;
-    overflow: hidden;
-    // position: relative;
     border-radius: 8px;
     transition-duration: 0.218s;
-    transition-property: background, border, opacity, box-shadow, transform;
+    transition-property: box-shadow;
     transition-timing-function: ease-in;
 
-    margin: 0;
-    display: grid;
-    grid-template-rows: 1fr auto;
-    margin-bottom: 10px;
-    break-inside: avoid;
+    // margin: 0;
+    // display: grid;
+    // grid-template-rows: 1fr auto;
+    // margin-bottom: 10px;
+    // break-inside: avoid;
+    
+    .check-icon{
+        @include icons-on-hover;
+        bottom: 24px;
+        left: -28px;
+        
+    }
+    .pin-icon{
+        @include icons-on-hover;
+        top: 0;
+        float: right;
+    }
+    .icon-is-visible{
+        @include icon-visible;
+    }
+}
+
+.note-layout:hover{
+    box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+    .hover-icon{
+        @include icon-visible;
+    }
+}
+
+.note-text{
+    color: 	#686868;
+    max-height: 344px;
+    overflow: hidden;
+    white-space: pre-line;
+    white-space: pre-wrap;
+    h5{
+        margin-top: 0px;
+    }
 }

@@ -9,9 +9,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { NoteComponent } from './components/note/note.component';
 import { FormsModule } from '@angular/forms';
 import { NgRedux, NgReduxModule } from '@angular-redux/store';
-import {IAppState, rootReducer, INITIAL_STATE} from './store'
+import { IAppState, rootReducer, INITIAL_STATE } from './store';
+import { AddNoteComponent } from './components/add-note/add-note.component';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SideNavComponent, HomeComponent, NoteComponent],
+  declarations: [AppComponent, HeaderComponent, SideNavComponent, HomeComponent, NoteComponent, AddNoteComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, NgReduxModule],
   providers: [],
   bootstrap: [AppComponent],

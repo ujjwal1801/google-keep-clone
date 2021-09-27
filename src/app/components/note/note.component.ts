@@ -1,4 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PINNOTE } from 'src/app/actions';
+import { NgRedux } from '@angular-redux/store';
+import { IAppState } from 'src/app/store';
+import { tassign } from 'tassign';
+import { NOTE, BLANK_NOTE } from 'src/app/interfaces/note.interface'
+
+
 
 @Component({
   selector: 'app-note',
@@ -9,10 +16,13 @@ export class NoteComponent implements OnInit {
 
   @Input("noteData") data: any = {};
 
-  constructor() { }
+  constructor(private ngRedux: NgRedux<IAppState>) { }
 
   ngOnInit(): void {
-    console.log('noteData -------> ', this.data);
+  }
+
+  pinNote = () => {
+    this.ngRedux.dispatch({type: PINNOTE, payload:{ note: tassign(this.data, { isPinned: !this.data.isPinned }) }})
   }
 
 }

@@ -1,0 +1,63 @@
+.note-box{
+    display: grid;
+    width: 50%;
+    padding: 6px 20px;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+
+}
+input, textarea{
+    border: none;
+    outline: none;
+    letter-spacing: .01428571em;
+    font-family: Roboto,Arial,sans-serif;
+    font-weight: 400;
+    line-height: 1.25rem;
+    font-size: 17px;
+
+}
+
+.add-notes-btn{
+    position: relative;
+    .material-icons{
+        position: absolute;
+        bottom: -82px;
+        right: -13px;
+        font-size: 42px;
+        cursor: pointer;
+    }
+}
+
+
+
+.grow-wrap {
+  /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
+  display: grid;
+}
+.grow-wrap::after {
+  /* Note the weird space! Needed to preventy jumpy behavior */
+  content: attr(data-replicated-value) " ";
+
+  /* This is how textarea text behaves */
+  white-space: pre-wrap;
+
+  /* Hidden from view, clicks, and screen readers */
+  visibility: hidden;
+}
+.grow-wrap > textarea {
+  /* You could leave this, but after a user resizes, then it ruins the auto sizing */
+  resize: none;
+
+  /* Firefox shows scrollbar on growth, you can hide like this. */
+  overflow: hidden;
+}
+.grow-wrap > textarea,
+.grow-wrap::after {
+  /* Identical styling required!! */
+  font: inherit;
+
+  /* Place on top of each other */
+  grid-area: 1 / 1 / 2 / 2;
+}
+

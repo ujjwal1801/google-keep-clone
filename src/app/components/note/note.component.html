@@ -1,3 +1,12 @@
-<div class="note-layout">
-    <span>{{data.text}}</span>
+<div class="note-layout m-10">
+    <span class="material-icons check-icon hover-icon">
+        check_circle
+    </span>
+    <span class="material-icons{{data.isPinned ? ' icon-is-visible' : '-outlined hover-icon'}} pin-icon hover-icon" (click)="pinNote()">
+        push_pin
+    </span>
+    <div class="note-text">
+        <h5>{{data.title}}</h5>
+        <span>{{data.text}}</span>
+    </div>
 </div>

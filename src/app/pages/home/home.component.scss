@@ -1,15 +1,19 @@
-.note-box{
-    padding: 6px 20px;
-    font-size: 22px;
-    border-radius: 8px;
-    border: 2px solid #e0e0e0;
-}
-.note-box:focus{
-    outline: none;
-}
 
 .notes-container{
-    
-column-count: 4;
-  column-gap: 10px;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+
+    // for masonry
+
+    // width: 1200px;
+    // column-count: 4;
+    // column-gap: 10px;
 }
+
+.notes .notes-layout{
+    // width: 100%;
+    // margin: 0 0 20px;
+}
+
