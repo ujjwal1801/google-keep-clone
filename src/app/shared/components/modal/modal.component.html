@@ -1,0 +1,25 @@
+<div *ngIf="isModalOpened | async">
+    <div class="uc-modal">
+        <div class="uc-m-content">
+            <div class="uc-m-header">
+                <h4>Header</h4>
+                <span class="material-icons-outlined closeModalBtn" (click)="closeModal()">
+                    close
+                </span>
+            </div>
+            <div class="uc-m-body">
+                <section class="w-100">
+                    <div class="add-new-note-container note-box" tabindex="1">
+                        <input type="text" placeholder="Title" class="p-15 noteTitle" [(ngModel)]="noteToEdit.title" >
+                        <div class="grow-wrap">
+                            <textarea name="text" id="noteText" class="p-15" placeholder="Take a note..." onInput="this.parentNode.dataset.replicatedValue = this.value" [(ngModel)]="noteToEdit.text"></textarea>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="uc-m-footer">
+                <button (click)="saveNote()" class="pointer">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

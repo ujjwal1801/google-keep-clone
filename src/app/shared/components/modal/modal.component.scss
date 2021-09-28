@@ -1,0 +1,107 @@
+button{
+    padding: 15px 30px;
+    background-color: #0b3582;
+    font-size: 14px;
+    border: 0;
+    border-radius:6px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.uc-modal{
+    position: fixed;
+    background: #000000bf;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.uc-m-content{
+    background: #fff;
+    width: 50%;
+    margin: 3% auto;
+    border-radius: 10px
+}
+.uc-m-header{
+    padding: 20px;
+    background: #0b3582;
+    color: #fff;
+    padding: 20px;
+    background: #0b3582;
+    color: #fff;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    .closeModalBtn{
+        float: right;
+        position: relative;
+        bottom: 30px;
+        right: -10px;
+        cursor: pointer;
+    }
+}
+.uc-m-header h4{
+    margin: 0;
+}
+.uc-m-body{
+    padding: 20px;
+    min-height: 200px;
+}
+.uc-m-footer{
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    text-align: right;
+}
+.uc-m-footer button{
+    margin-left: 20px;
+}
+
+
+
+
+input, textarea{
+    border: none;
+    outline: none;
+    letter-spacing: .01428571em;
+    font-family: Roboto,Arial,sans-serif;
+    font-weight: 400;
+    line-height: 1.25rem;
+}
+
+.noteTitle{
+    font-size: 22px;
+}
+
+
+
+
+.grow-wrap {
+  /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
+  display: grid;
+}
+.grow-wrap::after {
+  /* Note the weird space! Needed to preventy jumpy behavior */
+  content: attr(data-replicated-value) " ";
+
+  /* This is how textarea text behaves */
+  white-space: pre-wrap;
+
+  /* Hidden from view, clicks, and screen readers */
+  visibility: hidden;
+}
+.grow-wrap > textarea {
+  /* You could leave this, but after a user resizes, then it ruins the auto sizing */
+  resize: none;
+
+  /* Firefox shows scrollbar on growth, you can hide like this. */
+  overflow: hidden;
+}
+.grow-wrap > textarea,
+.grow-wrap::after {
+  /* Identical styling required!! */
+  font: inherit;
+
+  /* Place on top of each other */
+  grid-area: 1 / 1 / 2 / 2;
+}

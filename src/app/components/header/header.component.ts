@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
@@ -9,7 +10,9 @@ import { NavigationService } from 'src/app/services/navigation.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private navService: NavigationService) { }
+  constructor(private navService: NavigationService, private http: HttpService) { }
+
+  public searchString: string;
 
   ngOnInit(): void {
   }
@@ -18,4 +21,8 @@ export class HeaderComponent implements OnInit {
     this.navService.setShowNav(true);
   }
 
+  searchNotes = () => {
+    console.log('this.searchString -------> ', this.searchString);
+    if(this.searchString) this.http.fnSearchNotes(this.searchString);
+  }
 }

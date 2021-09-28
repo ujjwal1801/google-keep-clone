@@ -22,9 +22,7 @@ export class AddNoteComponent implements OnInit {
   }
 
   saveNote = () => {
-    console.log('this.newNote -------> ', this.newNote);
     this.http.fnCreateNewNote(this.newNote);
     this.newNote = {...this.blankNote};
-
   }
 }

@@ -3,10 +3,10 @@
         <span (click)="toggleSideNav()" class="menu-icon material-icons">menu</span>
         <div class="search-box">
             <div class="d-flex flex-center h-100">
-                <span class="material-icons"  style="font-size: 32px;">
+                <span class="material-icons" style="font-size: 32px;">
                     search
                 </span>
-                <input type="text" placeholder="Search" class="search-input">
+                <input type="text" placeholder="Search" class="search-input" [(ngModel)]="searchString" (input)="searchNotes()">
             </div>
         </div>
         <span class="menu-icon material-icons">settings</span>

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PINNOTE } from 'src/app/actions';
+import { MODAL } from 'src/app/actions';
 import { NgRedux } from '@angular-redux/store';
 import { IAppState } from 'src/app/store';
 import { tassign } from 'tassign';
@@ -23,7 +23,11 @@ export class NoteComponent implements OnInit {
   }
 
   pinNote = () => {
-    this.http.fnPinNote(this.data);
+    this.data.isPinned = !this.data.isPinned;
+    this.http.fnUpdateNote(this.data);
   }
 
+  editNote = () => {
+    this.ngRedux.dispatch({ type: MODAL, payload: {note: this.data, modalOpen: true}})
+  }
 }
