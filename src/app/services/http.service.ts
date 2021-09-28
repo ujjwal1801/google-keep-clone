@@ -9,14 +9,11 @@ import { ADDNOTES, PINNOTE } from 'src/app/actions';
 export class HttpService {
 
   constructor(private ngRedux: NgRedux<IAppState>) { 
-    this.ngRedux.select('notesList').subscribe(notes =>console.log('notes in subscription -------> ', notes))
   }
 
   private notesList = [];
 
   fnCreateNewNote = (noteData: any = {}) => {
-    console.log("state -",this.ngRedux.getState());
-
     if(noteData.title || noteData.text) {
         noteData._id = this.generateNoteID()
 
@@ -41,22 +38,12 @@ export class HttpService {
 
   fnPinNote = (noteData) => {
     let notesList = this.ngRedux.getState().notesList || [];
-    let pinnedNotes = this.ngRedux.getState().pinnedNotesList || [];
 
-    noteData.isPinned = !noteData.isPinned; 
-
-    if(noteData.isPinned){
-        notesList.splice(notesList.findIndex(note=>note._id === noteData._id), 1);
-        pinnedNotes.push(noteData);
-    }
-    else{ 
-        pinnedNotes.splice(pinnedNotes.findIndex(note=>note._id === noteData._id), 1);
-        notesList.push(noteData);
-    }
+    noteData.isPinned = !noteData.isPinned;
+    notesList[notesList.findIndex(note=>note._id === noteData._id)] = noteData;
     localStorage.setItem('notesList', JSON.stringify(notesList));
-    localStorage.setItem('pinnedNotesList', JSON.stringify(pinnedNotes));
 
-    this.ngRedux.dispatch({type: PINNOTE, payload:{ notes: notesList, pinnedNotes: pinnedNotes}})
+    this.ngRedux.dispatch({type: PINNOTE, payload:{ notes: notesList }})
 
   }
 

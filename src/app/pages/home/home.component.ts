@@ -12,16 +12,18 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   constructor(private ngRedux: NgRedux<IAppState>) {
-    this.ngRedux.select(s=>s.notesList).subscribe(()=>console.log("changessssssssss constructor"))
-   }
+  }
 
 
   public subscription;
-  @select('notesList') notes;
-  @select('pinnedNotesList') pinnedNotes;
+  notesList: Observable<any>;
+  pinnedNotes: Observable<any>;
+  otherNotesList: Observable<any>;
 
   ngOnInit(): void {
-    console.log('this.ngRedux.select<IAppState>("notesList") -------> ', this.ngRedux.select<IAppState>('notesList'));
+    this.notesList = this.ngRedux.select('notesList');
+    this.otherNotesList = this.ngRedux.select(state=>state.notesList?.filter(n=>n.isPinned===false))
+    this.pinnedNotes = this.ngRedux.select(state=>state.notesList?.filter(n=>n.isPinned===true)) 
   }
 
 

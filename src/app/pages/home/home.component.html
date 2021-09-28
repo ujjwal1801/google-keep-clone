@@ -10,12 +10,13 @@
         </ng-container>
     </div>
 </ng-container>
-<ng-container *ngIf="(notes | async)?.length > 0">
+<ng-container *ngIf="(otherNotesList | async)?.length > 0">
     <h5><i>Others</i></h5>
     <div class="notes-container">
-        <ng-container *ngFor="let note of notes | async">
+        <ng-container *ngFor="let note of otherNotesList | async">
             <app-note [noteData]="note"></app-note>
         </ng-container>
     </div>
 </ng-container>
+
 
