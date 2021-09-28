@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
 import { IAppState } from 'src/app/store';
-import { ADDNOTES } from 'src/app/actions';
 import { NOTE, BLANK_NOTE } from 'src/app/interfaces/note.interface'
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-add-note',
@@ -15,15 +15,16 @@ export class AddNoteComponent implements OnInit {
   public blankNote = {...BLANK_NOTE};
   public newNote: NOTE;
 
-  constructor(private ngRedux: NgRedux<IAppState>) { }
+  constructor(private ngRedux: NgRedux<IAppState>, private http: HttpService) { }
 
   ngOnInit(): void {
     this.newNote = {...this.blankNote};
-    this.ngRedux.select('pinnedNotesList').subscribe(res=>console.log("changes",res));
   }
 
   saveNote = () => {
-    this.ngRedux.dispatch({ type: ADDNOTES, payload: this.newNote });
-    this.newNote = this.blankNote;
+    console.log('this.newNote -------> ', this.newNote);
+    this.http.fnCreateNewNote(this.newNote);
+    this.newNote = {...this.blankNote};
+
   }
 }

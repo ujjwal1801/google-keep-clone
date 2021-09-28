@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, NgRedux } from '@angular-redux/store';
 import { IAppState } from 'src/app/store';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { IAppState } from 'src/app/store';
 export class HomeComponent implements OnInit {
 
   constructor(private ngRedux: NgRedux<IAppState>) {
-    this.subscription = this.ngRedux.select<IAppState>('notesList').subscribe(()=>console.log("changesssssss"))
+    this.ngRedux.select(s=>s.notesList).subscribe(()=>console.log("changessssssssss constructor"))
    }
 
 

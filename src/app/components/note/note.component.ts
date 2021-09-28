@@ -4,6 +4,7 @@ import { NgRedux } from '@angular-redux/store';
 import { IAppState } from 'src/app/store';
 import { tassign } from 'tassign';
 import { NOTE, BLANK_NOTE } from 'src/app/interfaces/note.interface'
+import { HttpService } from 'src/app/services/http.service';
 
 
 
@@ -16,13 +17,13 @@ export class NoteComponent implements OnInit {
 
   @Input("noteData") data: any = {};
 
-  constructor(private ngRedux: NgRedux<IAppState>) { }
+  constructor(private ngRedux: NgRedux<IAppState>, private http: HttpService) { }
 
   ngOnInit(): void {
   }
 
   pinNote = () => {
-    this.ngRedux.dispatch({type: PINNOTE, payload:{ note: tassign(this.data, { isPinned: !this.data.isPinned }) }})
+    this.http.fnPinNote(this.data);
   }
 
 }
