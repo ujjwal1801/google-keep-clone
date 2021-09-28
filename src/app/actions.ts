@@ -1,4 +1,6 @@
-export const ADDNOTES = 'ADDNOTES';
-export const PINNOTE = 'PINNOTE';
-export const MODAL = 'MODAL';
-export const SEARCH = 'SEARCH';
+export const ADDNOTES = 'ADDNOTES', 
+            ARCHIVE = 'ARCHIVE',
+            PINNOTE = 'PINNOTE',
+            MODAL = 'MODAL',
+            SEARCH = 'SEARCH';
+ 

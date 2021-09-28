@@ -1,9 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MODAL } from 'src/app/actions';
+import { ARCHIVE, MODAL } from 'src/app/actions';
 import { NgRedux } from '@angular-redux/store';
 import { IAppState } from 'src/app/store';
-import { tassign } from 'tassign';
-import { NOTE, BLANK_NOTE } from 'src/app/interfaces/note.interface'
 import { HttpService } from 'src/app/services/http.service';
 
 
@@ -29,5 +27,9 @@ export class NoteComponent implements OnInit {
 
   editNote = () => {
     this.ngRedux.dispatch({ type: MODAL, payload: {note: this.data, modalOpen: true}})
+  }
+  archiveNote = (e) => {
+    e.stopPropagation();
+    this.http.fnArchiveNote(this.data);
   }
 }
