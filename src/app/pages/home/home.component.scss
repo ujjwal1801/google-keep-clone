@@ -1,12 +1,19 @@
 
 .notes-container{
 
+    // row based layout
+    // display: flex;
+    // flex-wrap: wrap;
+    // margin-top: 15px;
+
+    // flex-based masonry
     display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    align-items: flex-start;
     flex-wrap: wrap;
-    margin-top: 15px;
 
-    // for masonry
-
+    // for masonry using css columns
     // width: 1200px;
     // column-count: 4;
     // column-gap: 10px;

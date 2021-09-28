@@ -3,6 +3,7 @@ export interface NOTE {
     title: string,
     text: string,
     isPinned: boolean,
+    isArchived: boolean,
 }
 
 export const BLANK_NOTE:NOTE = {
@@ -10,4 +11,5 @@ export const BLANK_NOTE:NOTE = {
     title: '',
     text: '',
     isPinned: false,
+    isArchived: false,
 }
