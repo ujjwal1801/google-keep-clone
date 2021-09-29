@@ -16,8 +16,10 @@
                 <span class="material-icons pointer" (click)="searchNotes(true)">clear</span>
             </div>
         </div>
-        <span class="material-icons-outlined header-icons" (click)="darkModeService.switchTheme()">
-            {{ (this.theme | async) === 'light-theme' ? 'light_mode' : 'dark_mode'}}
-        </span>
+        <div class="right-container">
+            <span class="material-icons-outlined header-icons" (click)="darkModeService.switchTheme()">
+                {{ (this.theme | async) === 'light-theme' ? 'light_mode' : 'dark_mode'}}
+            </span>
+        </div>
     </div>
 </header>

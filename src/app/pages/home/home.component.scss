@@ -2,16 +2,17 @@
 .notes-container{
 
     // row based layout
-    // display: flex;
-    // flex-wrap: wrap;
-    // margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    justify-content: flex-start;
 
     // flex-based masonry
-    display: flex;
-    flex-direction: column;
-    max-height: 100vh;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-direction: column;
+    // max-height: 100vh;
+    // align-items: flex-start;
+    // flex-wrap: wrap;
 
     // for masonry using css columns
     // width: 1200px;
@@ -19,9 +20,12 @@
     // column-gap: 10px;
 }
 
-.display-area{
-    padding: 0px 50px
+@media screen and (max-width: 768px) {
+    .notes-container{
+        justify-content: center;
+    }
 }
+
 
 .notes .notes-layout{
     // width: 100%;

@@ -21,3 +21,20 @@
         outline: none;
     }
 }
+
+@media screen and (max-width: 768px) {
+  .header-menu{
+      flex-wrap: wrap;
+      .left-container{
+          order: 1;
+      }
+      .search-box{
+          order: 3;
+          width: 100%;
+          margin: 0 8px;
+      }
+      .right-container{
+          order: 2;
+      }
+  }
+}

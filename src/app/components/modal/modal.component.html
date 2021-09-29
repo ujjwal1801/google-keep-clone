@@ -10,9 +10,9 @@
             <div class="uc-m-body box">
                 <section class="w-100">
                     <div class="add-new-note-container note-box" tabindex="1">
-                        <input type="text" placeholder="Title" class="p-15 noteTitle box-match-input" [(ngModel)]="noteToEdit.title" >
+                        <input type="text" placeholder="Title" class="noteTitle box-match-input w-100" [(ngModel)]="noteToEdit.title" >
                         <div class="grow-wrap">
-                            <textarea name="text" id="noteText" class="p-15 box-match-input" placeholder="Take a note..." onInput="this.parentNode.dataset.replicatedValue = this.value" [(ngModel)]="noteToEdit.text"></textarea>
+                            <textarea name="text" id="noteText" class="box-match-input" placeholder="Take a note..." onInput="this.parentNode.dataset.replicatedValue = this.value" [(ngModel)]="noteToEdit.text"></textarea>
                         </div>
                     </div>
                 </section>
