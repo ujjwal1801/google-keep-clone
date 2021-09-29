@@ -4,10 +4,11 @@
         <div class="grow-wrap">
             <textarea name="text" id="noteText" class="py-15" placeholder="Take a note..." onInput="this.parentNode.dataset.replicatedValue = this.value" [(ngModel)]="newNote.text"></textarea>
         </div>
-    </div>
-    <div class="add-notes-btn">
-        <span class="material-icons" (click)="saveNote()">
-            add_circle
-        </span>
+        
+        <div class="add-notes-btn">
+            <span class="material-icons" (click)="saveNote()">
+                add_circle
+            </span>
+        </div>
     </div>
 </section>
