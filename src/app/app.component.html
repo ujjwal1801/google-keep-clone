@@ -2,6 +2,10 @@
   <app-side-nav [sidenavTemplateRef]="navContent" [direction]="'left'" [navWidth]="280" [duration]="0.5"></app-side-nav> 
   <!-- <app-sidenav-alternate></app-sidenav-alternate> -->
   <div class="main-container">
+       
+  <button class="toggle" (click)="switchTheme()">
+    {{ theme === "light-theme" ? "Switch to dark" : "Switch to light" }}
+  </button>
     <app-header></app-header>
     <section class="p-15">
       <router-outlet></router-outlet>

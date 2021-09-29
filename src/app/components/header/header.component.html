@@ -1,12 +1,12 @@
 <header>
-    <div class="header-menu d-flex">
+    <div class="header-menu banner d-flex">
         <span (click)="toggleSideNav()" class="menu-icon material-icons">menu</span>
         <div class="search-box">
-            <div class="d-flex flex-center h-100 px-10">
+            <div class="d-flex flex-center h-100 px-10 box">
                 <span class="material-icons" style="font-size: 32px;">
                     search
                 </span>
-                <input type="text" placeholder="Search" class="search-input w-100" [(ngModel)]="searchString" (input)="searchNotes()">
+                <input type="text" placeholder="Search" class="search-input w-100 box-match-input" [(ngModel)]="searchString" (input)="searchNotes()">
                 <span class="material-icons pointer" (click)="searchNotes(true)">clear</span>
             </div>
         </div>
