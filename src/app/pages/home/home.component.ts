@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { select, NgRedux } from '@angular-redux/store';
+import { NgRedux } from '@angular-redux/store';
 import { IAppState } from 'src/app/store';
 import { Observable } from 'rxjs';
 import { DEFAULT } from 'src/app/actions';

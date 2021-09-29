@@ -20,8 +20,8 @@ export class HttpService {
       let masterNotesList = [...this.ngRedux.getState().masterNotesList || []];
       notesList.push(noteData)
       masterNotesList.push(noteData)
-      // Mimicking an api call. Replacing it with localstorage for demo purposes.
 
+      // Mimicking an api call. Replacing it with localstorage for demo purposes.
       this.fnMimicAPI(notesList, masterNotesList);
       this.ngRedux.dispatch({ type: ADDNOTES, payload: {notesList, masterNotesList} });
     } 

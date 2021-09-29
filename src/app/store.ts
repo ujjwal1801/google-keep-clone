@@ -1,6 +1,5 @@
 import { ADDNOTES, ARCHIVE, CATEGORY, MODAL, UPDATE_NOTE, SEARCH, DEFAULT, SWITCH_THEME, TRASH } from './actions';
 import { tassign } from 'tassign';
-import { ComponentFixture } from '@angular/core/testing';
 export interface IAppState {
     masterNotesList: Array<any>;
     notesList: Array<any>;

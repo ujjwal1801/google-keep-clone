@@ -11,7 +11,7 @@
     </div>
     <footer class="note-footer">
         <span class="material-icons-outlined pointer archive-icon hover-icon px-15" (click)="archiveNote($event)">
-            {{data.noteCategory === 'ARCHIVE' ? 'archive' : 'unarchive'}}
+            {{data.noteCategory === 'ARCHIVE' ? 'unarchive' : 'archive'}}
         </span>
         <span class="material-icons-outlined pointer archive-icon hover-icon" (click)="deleteNote($event)">
             delete
