@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { DarkModeService } from 'src/app/services/dark-mode.service';
 import { HttpService } from 'src/app/services/http.service';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { IAppState } from 'src/app/store';
+import { NgRedux } from '@angular-redux/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +14,15 @@ import { NavigationService } from 'src/app/services/navigation.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private navService: NavigationService, private http: HttpService) { }
+  constructor(private navService: NavigationService, private http: HttpService, public darkModeService: DarkModeService, private ngRedux: NgRedux<IAppState>) { }
 
   public searchString: string;
+  public theme: Observable<string>;
+  public category: Observable<string>;
 
   ngOnInit(): void {
+    this.theme = this.ngRedux.select('theme');
+    this.category = this.ngRedux.select('category');
   }
 
   toggleSideNav() {

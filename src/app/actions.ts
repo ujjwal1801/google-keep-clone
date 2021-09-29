@@ -5,5 +5,6 @@ export const ADDNOTES = 'ADDNOTES',
             SEARCH = 'SEARCH',
             CATEGORY = 'CATEGORY',
             DEFAULT = 'DEFAULT',
+            SWITCH_THEME = 'SWITCH_THEME',
             TRASH = 'TRASH';
  

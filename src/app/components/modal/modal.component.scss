@@ -1,10 +1,8 @@
 button{
     padding: 15px 30px;
-    background-color: #0b3582;
     font-size: 14px;
     border: 0;
     border-radius:6px;
-    color: #fff;
     cursor: pointer;
 }
 
@@ -19,18 +17,13 @@ button{
 }
 
 .uc-m-content{
-    background: #fff;
     width: 50%;
     margin: 3% auto;
     border-radius: 10px
 }
 .uc-m-header{
     padding: 20px;
-    background: #0b3582;
-    color: #fff;
     padding: 20px;
-    background: #0b3582;
-    color: #fff;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     .closeModalBtn{
@@ -50,14 +43,13 @@ button{
 }
 .uc-m-footer{
     padding: 20px;
-    border-top: 1px solid #ccc;
     text-align: right;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 .uc-m-footer button{
     margin-left: 20px;
 }
-
-
 
 
 input, textarea{

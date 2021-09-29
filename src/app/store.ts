@@ -1,4 +1,4 @@
-import { ADDNOTES, ARCHIVE, CATEGORY, MODAL, UPDATE_NOTE, SEARCH, DEFAULT } from './actions';
+import { ADDNOTES, ARCHIVE, CATEGORY, MODAL, UPDATE_NOTE, SEARCH, DEFAULT, SWITCH_THEME, TRASH } from './actions';
 import { tassign } from 'tassign';
 import { ComponentFixture } from '@angular/core/testing';
 export interface IAppState {
@@ -13,7 +13,7 @@ export interface IAppState {
 export const INITIAL_STATE: IAppState = {
     masterNotesList: JSON.parse(localStorage.getItem('masterNotesList')),
     notesList: JSON.parse(localStorage.getItem('masterNotesList'))?.filter(note=>note.noteCategory === DEFAULT),
-    theme: 'light',
+    theme: localStorage.getItem('theme') || 'light-theme',
     isModalOpened: false,
     noteToUpdate: {},
     category: 'DEFAULT'
@@ -26,6 +26,8 @@ export function rootReducer(state: IAppState, action): IAppState{
             return tassign(state, { notesList: action.payload.notesList, masterNotesList: action.payload.masterNotesList});
         case UPDATE_NOTE:
             return tassign(state, { notesList: action.payload });
+        case TRASH:
+            return tassign(state, { notesList: action.payload.notesList, masterNotesList: action.payload.masterNotesList});
         case MODAL:
             return tassign(state, { noteToUpdate: action.payload.note, isModalOpened: action.payload.modalOpen });
         case SEARCH:
@@ -33,7 +35,9 @@ export function rootReducer(state: IAppState, action): IAppState{
         case ARCHIVE:
             return tassign(state, { notesList: action.payload.notesList, masterNotesList: action.payload.masterNotesList});
         case CATEGORY:
-            return tassign(state, { category: action.payload.category, notesList: action.payload.notesList})
+            return tassign(state, { category: action.payload.category, notesList: action.payload.notesList});
+        case SWITCH_THEME:
+            return tassign(state, { theme: action.payload});
         default:
             return state;
     }

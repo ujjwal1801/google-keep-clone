@@ -1,6 +1,12 @@
 <header>
     <div class="header-menu banner d-flex">
-        <span (click)="toggleSideNav()" class="menu-icon material-icons">menu</span>
+        <div class="left-container d-flex">
+            <span (click)="toggleSideNav()" class="header-icons material-icons">menu</span>
+            <span class="material-icons-outlined header-icons">
+                label
+            </span>
+            <h4>{{ (category | async) === 'ARCHIVE' ? 'Archived Notes' : 'Notes'}}</h4>
+        </div>
         <div class="search-box">
             <div class="d-flex flex-center h-100 px-10 box">
                 <span class="material-icons" style="font-size: 32px;">
@@ -10,6 +16,8 @@
                 <span class="material-icons pointer" (click)="searchNotes(true)">clear</span>
             </div>
         </div>
-        <span class="menu-icon material-icons">settings</span>
+        <span class="material-icons-outlined header-icons" (click)="darkModeService.switchTheme()">
+            {{ (this.theme | async) === 'light-theme' ? 'light_mode' : 'dark_mode'}}
+        </span>
     </div>
 </header>

@@ -16,9 +16,9 @@
                         <span class="material-icons side-nav-bar-close" (click)="onSidebarClose()">clear</span>
                     </div>
                     <div class="nav-links">
-                        <a class="link" (click)="switchCategory('DEFAULT')">Notes</a>
-                        <a class="link" (click)="switchCategory('ARCHIVE')">Archive</a>
-                        <a class="link" (click)="switchCategory('TRASH')">Trash</a>
+                        <a class="link" (click)="switchCategory('DEFAULT')" [ngClass]="{'active-link': (category | async) === 'DEFAULT'}">Notes</a>
+                        <a class="link" (click)="switchCategory('ARCHIVE')" [ngClass]="{'active-link': (category | async) === 'ARCHIVE'}">Archive</a>
+                        <!-- <a class="link" (click)="switchCategory('TRASH')" [ngClass]="{'active-link': (category | async) === 'TRASH'}">Trash</a> -->
                     </div>
                 </div>
             </ng-container>

@@ -25,7 +25,10 @@ export class SideNavComponent implements OnInit {
 
   ngOnInit(): void {
     this.showSideNav = this.navService.getShowNav();
+    this.category = this.ngRedux.select('category')
   }
+
+  category: Observable<string>;
 
   onSidebarClose() {
     this.navService.setShowNav(false);
