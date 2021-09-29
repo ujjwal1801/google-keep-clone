@@ -1,7 +1,5 @@
 # GoogleKeepClone
 
-# GoogleKeepClone
-
 This project is an attempt to recreate a notes taking app like Google Keep. The app currently supports adding, pinning, archiving and crud operations on the notes.
 
 # Tech-stack used
@@ -21,11 +19,11 @@ The application has been developed in Angular 9 and uses Redux for state managem
 
 
 
-
-
-
 Below you'll find the default content of the README.md file that Angular creates.
 
+***
+***
+***
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
 ## Development server
