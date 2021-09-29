@@ -1,13 +1,22 @@
-<app-side-nav [sidenavTemplateRef]="navContent" [direction]="'left'" [navWidth]="280" [duration]="0.5"></app-side-nav>
+<!-- <div class="d-flex h-100"> -->
+  <app-side-nav [sidenavTemplateRef]="navContent" [direction]="'left'" [navWidth]="280" [duration]="0.5"></app-side-nav> 
+  <!-- <app-sidenav-alternate></app-sidenav-alternate> -->
+  <div class="main-container">
+    <app-header></app-header>
+    <section class="p-15">
+      <router-outlet></router-outlet>
+    </section>
+  </div>
+<!-- </div> -->
+
+
 <app-modal></app-modal>
 
-<div class="main-container">
-  <app-header></app-header>
-  <section class="p-15">
-    <router-outlet></router-outlet>
-  </section>
-</div>
 
 <ng-template #navContent>
-  Side Nav Bar Content Here
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
 </ng-template>

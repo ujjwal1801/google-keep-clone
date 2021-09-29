@@ -21,15 +21,16 @@
         flex-direction: column;
 
         .side-nav-bar-close {
-            display: inline-block;
-            font-size: 2.5em;
-            margin: 24px 0px 0px 24px;
+            font-size: 1.5em;
             cursor: pointer;
         }
     }
 
     .side-nav-bar-content-container {
-        padding: 32px;
+        .close-nav-container{
+            text-align: end;
+        }
+        // padding: 32px;
     }
 }
 
@@ -39,4 +40,23 @@
 
 .side-nav-bar-collapsed {
     visibility: collapse !important;
+}
+
+.links-container {
+    .nav-links{
+        margin-top: 1.5em;
+    }
+    a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+}
+
+/* When you mouse over the navigation links, change their color */
+.links-container a:hover {
+  color: #f1f1f1;
 }

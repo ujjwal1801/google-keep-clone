@@ -1,22 +1,25 @@
-<app-add-note></app-add-note>
+<ng-container *ngIf="(category | async) === defaultCategory">
+    <app-add-note></app-add-note>
+</ng-container>
 
-<ng-container *ngIf="(pinnedNotes | async)?.length > 0">
-    <h5><i>Pinned Notes</i></h5>
-    <div class="notes-container">
-        <ng-container>
-            <div *ngFor="let note of pinnedNotes | async">
+<section class="display-area">
+    <ng-container *ngIf="(pinnedNotes | async)?.length > 0">
+        <h5><i>Pinned Notes</i></h5>
+        <div class="notes-container">
+            <ng-container>
+                <div *ngFor="let note of pinnedNotes | async">
+                    <app-note [noteData]="note"></app-note>
+                </div>
+            </ng-container>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="(otherNotesList | async)?.length > 0">
+        <h5><i>Others</i></h5>
+        <div class="notes-container">
+            <ng-container *ngFor="let note of otherNotesList | async">
                 <app-note [noteData]="note"></app-note>
-            </div>
-        </ng-container>
-    </div>
-</ng-container>
-<ng-container *ngIf="(otherNotesList | async)?.length > 0">
-    <h5><i>Others</i></h5>
-    <div class="notes-container">
-        <ng-container *ngFor="let note of otherNotesList | async">
-            <app-note [noteData]="note"></app-note>
-        </ng-container>
-    </div>
-</ng-container>
-
+            </ng-container>
+        </div>
+    </ng-container>
+</section>
 

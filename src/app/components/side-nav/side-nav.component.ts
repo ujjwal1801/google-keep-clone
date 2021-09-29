@@ -2,6 +2,9 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { Observable } from 'rxjs';
 import { SideNavDirection } from './side-nav-direction';
+import { IAppState } from 'src/app/store';
+import { NgRedux } from '@angular-redux/store';
+import { CATEGORY } from 'src/app/actions';
 
 @Component({
   selector: 'app-side-nav',
@@ -18,7 +21,7 @@ export class SideNavComponent implements OnInit {
   @Input() navWidth: number = window.innerWidth;
   @Input() direction: SideNavDirection = SideNavDirection.Left;
   
-  constructor(private navService: NavigationService) {}
+  constructor(private navService: NavigationService, private ngRedux: NgRedux<IAppState>) {}
 
   ngOnInit(): void {
     this.showSideNav = this.navService.getShowNav();
@@ -36,5 +39,12 @@ export class SideNavComponent implements OnInit {
     navBarStyle[this.direction] = (showNav ? 0 : (this.navWidth * -1)) + 'px';
     
     return navBarStyle;
+  }
+
+  switchCategory(category: string) {
+    let masterNotesList = this.ngRedux.getState().masterNotesList;
+    let notesList = masterNotesList.filter(note=>note.noteCategory === category);
+    this.ngRedux.dispatch({ type: CATEGORY, payload: { category, notesList } });
+    this.onSidebarClose();
   }
 }

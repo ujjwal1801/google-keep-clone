@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { select, NgRedux } from '@angular-redux/store';
 import { IAppState } from 'src/app/store';
 import { Observable } from 'rxjs';
+import { DEFAULT } from 'src/app/actions';
 
 
 @Component({
@@ -14,14 +15,15 @@ export class HomeComponent implements OnInit {
   constructor(private ngRedux: NgRedux<IAppState>) {
   }
 
-
-  public subscription;
   notesList: Observable<any>;
   pinnedNotes: Observable<any>;
   otherNotesList: Observable<any>;
+  category: Observable<string>;
+  defaultCategory: string = DEFAULT;
 
   ngOnInit(): void {
     this.notesList = this.ngRedux.select('notesList');
+    this.category = this.ngRedux.select('category');
     this.otherNotesList = this.ngRedux.select(state=>state.notesList?.filter(n=>n.isPinned===false))
     this.pinnedNotes = this.ngRedux.select(state=>state.notesList?.filter(n=>n.isPinned===true)) 
   }

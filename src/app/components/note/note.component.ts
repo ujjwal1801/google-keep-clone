@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ARCHIVE, MODAL } from 'src/app/actions';
+import { MODAL } from 'src/app/actions';
 import { NgRedux } from '@angular-redux/store';
 import { IAppState } from 'src/app/store';
 import { HttpService } from 'src/app/services/http.service';
@@ -31,5 +31,9 @@ export class NoteComponent implements OnInit {
   archiveNote = (e) => {
     e.stopPropagation();
     this.http.fnArchiveNote(this.data);
+  }
+  deleteNote = (e) =>{
+    e.stopPropagation();
+    this.http.fnDeleteNote(this.data);
   }
 }

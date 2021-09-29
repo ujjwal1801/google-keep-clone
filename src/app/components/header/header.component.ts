@@ -21,8 +21,8 @@ export class HeaderComponent implements OnInit {
     this.navService.setShowNav(true);
   }
 
-  searchNotes = () => {
-    console.log('this.searchString -------> ', this.searchString);
-    if(this.searchString) this.http.fnSearchNotes(this.searchString);
+  searchNotes = (dismissSearch: boolean = false) => {
+    if(dismissSearch) this.searchString = '';
+    this.http.fnSearchNotes(this.searchString);
   }
 }

@@ -1,6 +1,9 @@
 export const ADDNOTES = 'ADDNOTES', 
             ARCHIVE = 'ARCHIVE',
-            PINNOTE = 'PINNOTE',
+            UPDATE_NOTE = 'UPDATE_NOTE',
             MODAL = 'MODAL',
-            SEARCH = 'SEARCH';
+            SEARCH = 'SEARCH',
+            CATEGORY = 'CATEGORY',
+            DEFAULT = 'DEFAULT',
+            TRASH = 'TRASH';
  

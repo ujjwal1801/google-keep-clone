@@ -12,8 +12,9 @@ import { NgRedux, NgReduxModule } from '@angular-redux/store';
 import { IAppState, rootReducer, INITIAL_STATE } from './store';
 import { AddNoteComponent } from './components/add-note/add-note.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
+import { SidenavAlternateComponent } from './components/sidenav-alternate/sidenav-alternate.component';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SideNavComponent, HomeComponent, NoteComponent, AddNoteComponent, ModalComponent],
+  declarations: [AppComponent, HeaderComponent, SideNavComponent, HomeComponent, NoteComponent, AddNoteComponent, ModalComponent, SidenavAlternateComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, NgReduxModule],
   providers: [],
   bootstrap: [AppComponent],

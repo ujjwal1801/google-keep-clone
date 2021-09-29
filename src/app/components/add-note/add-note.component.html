@@ -1,8 +1,8 @@
 <section class="d-flex flex-center w-100">
     <div class="add-new-note-container note-box" tabindex="1">
-        <input type="text" placeholder="Title" class="p-15" [(ngModel)]="newNote.title" >
+        <input type="text" placeholder="Title" class="py-15 w-100" [(ngModel)]="newNote.title" >
         <div class="grow-wrap">
-            <textarea name="text" id="noteText" class="p-15" placeholder="Take a note..." onInput="this.parentNode.dataset.replicatedValue = this.value" [(ngModel)]="newNote.text"></textarea>
+            <textarea name="text" id="noteText" class="py-15" placeholder="Take a note..." onInput="this.parentNode.dataset.replicatedValue = this.value" [(ngModel)]="newNote.text"></textarea>
         </div>
     </div>
     <div class="add-notes-btn">
